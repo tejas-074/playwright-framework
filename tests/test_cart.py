@@ -13,5 +13,5 @@ def test_cart_shows_added_item(login_page, inventory_page, cart_page):
     login_page.login(USERNAME, PASSWORD)
     inventory_page.add_item("Sauce Labs Backpack")
     inventory_page.open_cart()
-    assert cart_page.item_count() == 1
+    expect(cart_page.item_names).to_have_count(1)
     expect(cart_page.item_names).to_have_text("Sauce Labs Backpack")
