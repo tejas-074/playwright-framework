@@ -4,6 +4,7 @@ from config.settings import BASE_URL
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from pages.cart_page import CartPage
+from pages.checkout_page import CheckoutPage
 
 
 @pytest.fixture(scope="session")
@@ -29,3 +30,7 @@ def inventory_page(page: Page):
 @pytest.fixture
 def cart_page(page: Page):
     return CartPage(page)
+
+@pytest.fixture
+def checkout_page(page: Page):
+    return CheckoutPage(page)
