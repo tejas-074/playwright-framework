@@ -2,6 +2,8 @@ import pytest
 from playwright.sync_api import Page
 from config.settings import BASE_URL
 from pages.login_page import LoginPage
+from pages.inventory_page import InventoryPage
+from pages.cart_page import CartPage
 
 
 @pytest.fixture(scope="session")
@@ -19,3 +21,11 @@ def login_page(page: Page):
     lp = LoginPage(page)
     lp.open(BASE_URL)
     return lp
+
+@pytest.fixture
+def inventory_page(page: Page):
+    return InventoryPage(page)
+
+@pytest.fixture
+def cart_page(page: Page):
+    return CartPage(page)
